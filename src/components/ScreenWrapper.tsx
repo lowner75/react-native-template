@@ -1,26 +1,57 @@
 // src/components/ScreenWrapper.tsx
 
-import { ReactNode } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// Dependencies ...
+import React from 'react';
 import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useAppTheme } from '../hooks/useAppTheme';
+import { ThemedView } from './ThemedView';
 
-// ReactNode: built-in type that represents anything React is allowed to render
-type ScreenWrapperProps = {
-  children: ReactNode;
-};
-
-export function ScreenWrapper({ children }: ScreenWrapperProps) {
-  return (
-    <SafeAreaView style={styles.container}>
-      {children}
-    </SafeAreaView>
-  );
+interface ScreenWrapperProps {
+  children: React.ReactNode;
+  noTopPadding?: boolean;
+  lightColor?: string; // optional override
+  darkColor?: string;  // optional override
 }
 
+export const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
+  children,
+  noTopPadding = false,
+  lightColor,
+  darkColor,
+}) => {
+  const insets = useSafeAreaInsets();
+  const { theme, colors } = useAppTheme();
+
+  const backgroundColor =
+    theme === 'dark' ? darkColor ?? colors.background : lightColor ?? colors.background;
+
+  return (
+    <ThemedView
+      style={[
+        styles.container,
+        {
+          paddingTop: 30,
+          paddingBottom: insets.bottom + 10,
+          backgroundColor,
+        },
+      ]}
+    >
+      <StatusBar
+        style={theme === 'dark' ? 'light' : 'dark'}
+        backgroundColor={backgroundColor} // Android
+        translucent={false}
+      />
+      {children}
+    </ThemedView>
+  );
+};
+
+// Styles ...
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // To be themeed later
+    paddingHorizontal: 20,
   },
-  
 });
