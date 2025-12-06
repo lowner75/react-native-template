@@ -2,6 +2,7 @@
 
 // Dependencies ...
 import React from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { useAppTheme } from '../hooks/useAppTheme';
@@ -21,15 +22,21 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 export default function BottomTabsNavigator() {
   const { colors } = useAppTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerStyle: { backgroundColor: colors.headerBackground },
         headerTintColor: colors.text,
+        headerTitleAlign: 'left',
+        headerTitleStyle: {
+          paddingLeft: 4,
+        },
         tabBarStyle: {
-          height: 90,
-          paddingTop: 10,
+          height: insets.bottom + 66,
+          paddingTop: 8,
+          paddingBottom: insets.bottom,
           borderTopWidth: 0,
           backgroundColor: colors.tabBarBackground,
         },
@@ -50,11 +57,11 @@ export default function BottomTabsNavigator() {
               break;
           }
 
-          return <Ionicons name={iconName} size={24} color={color} />;
+          return <Ionicons name={iconName} size={22} color={color} />;
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Explore" component={ExploreScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
