@@ -1,12 +1,12 @@
 // src/screens/HomeScreen.tsx
 
 import { ScreenWrapper } from '../components/ScreenWrapper';
-import { Text } from 'react-native';
+import { ThemedText } from '../components/ThemedText';
 
 export default function HomeScreen() {
   return (
     <ScreenWrapper>
-      <Text>Home Screen</Text>
+      <ThemedText>Home Screen</ThemedText>
     </ScreenWrapper>
   );
 }

@@ -1,12 +1,12 @@
 // src/screens/SettingsScreen.tsx
 
 import { ScreenWrapper } from '../components/ScreenWrapper';
-import { Text } from 'react-native';
+import { ThemedText } from '../components/ThemedText';
 
 export default function SettingsScreen() {
   return (
     <ScreenWrapper>
-      <Text>Settings Screen</Text>
+      <ThemedText>Settings Screen</ThemedText>
     </ScreenWrapper>
   );
 }

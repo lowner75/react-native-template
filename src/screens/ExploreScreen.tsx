@@ -1,12 +1,12 @@
 // src/screens/ExploreScreen.tsx
 
 import { ScreenWrapper } from '../components/ScreenWrapper';
-import { Text } from 'react-native';
+import { ThemedText } from '../components/ThemedText';
 
 export default function ExploreScreen() {
   return (
     <ScreenWrapper>
-      <Text>Explore Screen</Text>
+      <ThemedText>Explore Screen</ThemedText>
     </ScreenWrapper>
   );
 }
