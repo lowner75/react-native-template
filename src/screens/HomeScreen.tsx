@@ -8,7 +8,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
 
   return (
-    <ScreenWrapper style={{ paddingTop: insets.top + 24 }}>
+    <ScreenWrapper style={{ paddingTop: insets.top + 36 }}>
       <ThemedText type="title">Home Screen</ThemedText>
     </ScreenWrapper>
   );
