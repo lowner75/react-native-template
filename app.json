@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-template",
+    "name": "React Native Template",
     "slug": "react-native-template",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,25 +10,32 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "icon": "./assets/transparent.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#000000"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.lowner75.reactnativetemplate"
+      "package": "com.lowner75.reactnativetemplate",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "39729be6-2f28-4fb6-ad09-926d78634f6a"
+      }
+    }
   }
 }
