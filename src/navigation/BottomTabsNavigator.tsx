@@ -34,8 +34,8 @@ export default function BottomTabsNavigator() {
           paddingLeft: 4,
         },
         tabBarStyle: {
-          height: insets.bottom + 66,
-          paddingTop: 8,
+          height: insets.bottom + 64,
+          paddingTop: 6,
           paddingBottom: insets.bottom,
           borderTopWidth: 0,
           backgroundColor: colors.tabBarBackground,
@@ -57,7 +57,7 @@ export default function BottomTabsNavigator() {
               break;
           }
 
-          return <Ionicons name={iconName} size={22} color={color} />;
+          return <Ionicons name={iconName} size={20} color={color} />;
         },
       })}
     >
