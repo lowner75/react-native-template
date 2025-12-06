@@ -2,7 +2,7 @@
 
 // Dependencies ...
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppTheme } from '../hooks/useAppTheme';
@@ -11,16 +11,18 @@ import { ThemedView } from './ThemedView';
 interface ScreenWrapperProps {
   children: React.ReactNode;
   noTopPadding?: boolean;
-  lightColor?: string; // optional override
-  darkColor?: string;  // optional override
+  lightColor?: string;
+  darkColor?: string;
+  style?: ViewStyle | ViewStyle[];
 }
 
-export const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
+export function ScreenWrapper({
   children,
   noTopPadding = false,
   lightColor,
   darkColor,
-}) => {
+  style,
+}: ScreenWrapperProps) {
   const insets = useSafeAreaInsets();
   const { theme, colors } = useAppTheme();
 
@@ -32,10 +34,11 @@ export const ScreenWrapper: React.FC<ScreenWrapperProps> = ({
       style={[
         styles.container,
         {
-          paddingTop: 30,
+          paddingTop: noTopPadding ? 0 : 30,
           paddingBottom: insets.bottom + 10,
           backgroundColor,
         },
+        style,
       ]}
     >
       <StatusBar
