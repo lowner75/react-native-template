@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet } from 'react-native';
 
+// ReactNode: built-in type that represents anything React is allowed to render
 type ScreenWrapperProps = {
   children: ReactNode;
 };
