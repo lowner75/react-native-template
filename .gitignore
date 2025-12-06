@@ -1,6 +1,9 @@
 # JetBrains IDEs
 .idea/
 
+#Asset dev
+.dev/
+
 # Node dependencies
 node_modules/
 
