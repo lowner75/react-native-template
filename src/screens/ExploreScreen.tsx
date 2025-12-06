@@ -6,7 +6,7 @@ import { ThemedText } from '../components/ThemedText';
 export default function ExploreScreen() {
   return (
     <ScreenWrapper>
-      <ThemedText>Explore Screen</ThemedText>
+      <ThemedText type="defaultSemiBold">Your Explore Screen</ThemedText>
     </ScreenWrapper>
   );
 }
