@@ -2,6 +2,7 @@
 
 // Dependencies ...
 import React from 'react';
+import { Pressable } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
@@ -61,9 +62,49 @@ export default function BottomTabsNavigator() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="Explore" component={ExploreScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Explore"
+        component={ExploreScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+          <Pressable
+            onPress={() => navigation.goBack()}
+            style={{ paddingRight: 8, paddingVertical: 8 }}
+          >
+            <Ionicons
+              name="chevron-back"
+              size={20}
+              color={colors.text}
+              style={{ marginTop: 2, marginLeft: 12 }}
+            />
+          </Pressable>
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => (
+          <Pressable
+            onPress={() => navigation.goBack()}
+            style={{ paddingRight: 8, paddingVertical: 8 }}
+          >
+            <Ionicons
+              name="chevron-back"
+              size={20}
+              color={colors.text}
+              style={{ marginTop: 2, marginLeft: 12 }}
+            />
+          </Pressable>
+          ),
+        })}
+      />
     </Tab.Navigator>
   );
 }
