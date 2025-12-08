@@ -8,7 +8,7 @@ import { useAppTheme } from '../hooks/useAppTheme';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'label' | 'link';
 };
 
 export const ThemedText: React.FC<ThemedTextProps> = ({
@@ -30,6 +30,7 @@ export const ThemedText: React.FC<ThemedTextProps> = ({
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
+        type === 'label' ? styles.label : undefined,
         type === 'link' ? styles.link : undefined,
         style,
       ]}
@@ -58,6 +59,10 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  label: {
+    fontSize: 14,
+    opacity: 0.6,
   },
   link: {
     lineHeight: 30,
