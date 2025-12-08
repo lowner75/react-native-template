@@ -252,6 +252,7 @@ Remember to keep paths short to avoid Gradle issues.
 /src
 |___  /components
 |___  /constants
+|___  /context
 |___  /hooks
 |___  /navigation
 |___  /screens
