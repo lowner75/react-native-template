@@ -18,6 +18,8 @@ export const Colors = {
     tabIconSelected: tintColorLight,
     tabBarBackground: '#F2F2F2',
     headerBackground: '#F2F2F2',
+    border: '#E2E2E2',
+    buttonColor: '#E8E8E8',
   },
   dark: {
     accent: "#fe993b",
@@ -29,6 +31,8 @@ export const Colors = {
     tabIconSelected: tintColorDark,
     tabBarBackground: '#101112',
     headerBackground: '#101112',
+    border: '#63676dff',
+    buttonColor: '#26292bff',
   },
 };
 
