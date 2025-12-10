@@ -9,7 +9,7 @@ const tintColorDark = '#FFFFFF';
 
 export const Colors = {
   light: {
-    accent: "#fe993b",
+    accent: "#ff8c0e",
     text: '#11181C',
     background: '#FFFFFF',
     tint: tintColorLight,
@@ -22,7 +22,7 @@ export const Colors = {
     buttonColor: '#E8E8E8',
   },
   dark: {
-    accent: "#fe993b",
+    accent: "#ff8c0e",
     text: '#ECEDEE',
     background: '#151718',
     tint: tintColorDark,
