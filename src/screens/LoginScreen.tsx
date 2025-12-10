@@ -1,7 +1,7 @@
 // src/screens/LoginScreen.tsx
 
 import React from 'react';
-import { StyleSheet, Pressable, Image } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { useGoogleSignIn } from '../hooks/useGoogleSignIn';
 import { ScreenWrapper } from '../components/ScreenWrapper';
 import { ThemedView } from '../components/ThemedView';
