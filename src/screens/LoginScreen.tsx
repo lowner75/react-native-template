@@ -5,6 +5,7 @@ import { StyleSheet, Image } from 'react-native';
 import { useGoogleSignIn } from '../hooks/useGoogleSignIn';
 import { ScreenWrapper } from '../components/ScreenWrapper';
 import { ThemedView } from '../components/ThemedView';
+import { ThemedText } from '../components/ThemedText';
 import { useAppTheme } from '../hooks/useAppTheme';
 import { ThemedButton } from '../components/ThemedButton';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,8 +14,8 @@ export default function LoginScreen() {
   const { colors, theme } = useAppTheme();
   const { user, signIn } = useGoogleSignIn();
 
-  const logoDark = require('../../assets/adaptive-icon.png');
-  const logoLight = require('../../assets/adaptive-icon-light.png');
+  const logoDark = require('../../assets/adaptive-icon-cropped.png');
+  const logoLight = require('../../assets/adaptive-icon-cropped-light.png');
 
   return (
     <ScreenWrapper>
@@ -25,6 +26,8 @@ export default function LoginScreen() {
           style={styles.logo}
           resizeMode="contain"
         />
+
+        <ThemedText type="title" style={styles.title}>React Native Template</ThemedText>
 
         <ThemedButton
           title="Sign In with Google"
@@ -46,8 +49,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 150,
-    height: 150,
-    marginBottom: 32,
+    width: 100,
+    height: 100,
+    marginBottom: 48,
+  },
+  title: {
+    marginBottom: 48,
   },
 });
