@@ -59,11 +59,12 @@ Allows the app to run as a standalone development client in Android Studio. Ensu
 
 ## Reset Git (Optional)
 
-```bash
-rmdir /s /q .git
-```
+*Optional:* Delete the `.git` folder if you want a fresh git history.
 
-Or simply delete the .git folder in your root directory.
+```bash
+- Windows: `rmdir /s /q .git`
+- macOS/Linux: `rm -rf .git`
+```
 
 ## Install Core Dependencies
 
@@ -214,9 +215,12 @@ npx expo start --dev-client
 
 Use tsconfig.json paths like @/src/... and mirror them in metro.config.js.
 
-### 2. Asset Management
+### 2. Asset Management / Adaptive Icons
 
-Place all images/icons inside src/assets/.
+Place all images/icons inside assets/. The template includes:
+
+- `adaptive-icon.png` → default / dark mode
+- `adaptive-icon-light.png` → light mode
 
 ### 3. App Name
 
