@@ -13,7 +13,7 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function RootNavigator() {
+export function RootNavigator() {
   const { user } = useAuth();
 
   return (
